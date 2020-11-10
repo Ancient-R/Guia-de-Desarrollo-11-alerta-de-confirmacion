@@ -1,0 +1,147 @@
+body{
+    background-color: #f3f3f3;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* El contenedor de la modal 
+    display: none para que no
+    se muestre, hasta hacerlo
+    con el botón mostrar
+*/
+.modal-background{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+
+.modal{
+    width: 300px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.modal-title,
+.modal-body{
+    text-align: center;
+    color: #4b4b4b;
+}
+
+.modal-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+.modal-body{
+    font-size: 1.3rem;
+}
+
+/*  Contenedor de botones 
+    de confirmación
+    o cancelar */
+
+.modal-btns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*  Botones de abrir, cerrar y confirmar */
+.btn-open-modal,
+.btn-confirm-modal,
+.btn-close-modal{
+    display: block;
+    border: none;
+    border-radius: 3px;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .8rem;
+    color: #fff;
+    outline: none;
+    transition: background-color .5s ease;
+}
+
+.btn-open-modal{
+    background-color: #007bfe;
+}
+
+.btn-confirm-modal{
+    background-color: #007bfe;
+    border: 2px double #57a8ff;
+    width: 150px;
+}
+
+.btn-close-modal{
+    background-color: #DD3333;
+}
+
+/* Clase agregada mediante Javascript */
+.show--modal{
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fadein{
+    animation: fadein 1s ease;
+}
+
+/* Los keyframes nos permiten  
+    controlar los pasos intermedios en 
+    una secuencia de animación CSS 
+    mediante el establecimiento de 
+    keyframes (o puntos de trayectoria) 
+*/
+
+@keyframes fadein{
+    from{
+        clip-path: circle(0.0% at 50% 50%);;
+    }
+    to{
+        clip-path: circle(100% at 50% 50%);
+    }
+}
+
+
+/*  media queries para pantallas grandes */
+@media screen and (min-width: 748px){
+    .modal{
+        width: 400px;
+    }
+
+    .modal-btns{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .btn-open-modal:hover,
+    .btn-confirm-modal:hover,
+    .btn-close-modal:hover{
+        cursor: pointer;
+    }
+
+    .btn-confirm-modal:hover{
+        background-color: #0869d0;
+    }
+
+    .btn-close-modal:hover{
+        background-color: #ac2a2a;
+    }
+
+}
